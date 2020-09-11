@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1599861741 source:g:\proyectos codeblocks\trabajo practico n°1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Menu.h"
+
+1599861673 source:g:\proyectos codeblocks\trabajo practico n°1\menu.c
+	<stdio.h>
+	<stdlib.h>
+
+1599861660 g:\proyectos codeblocks\trabajo practico n°1\menu.h
+
