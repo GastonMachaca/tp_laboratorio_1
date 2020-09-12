@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-int menu(int num1,int num2,int bandera1,int bandera2)
+int menu(float num1,float num2,int bandera1,int bandera2)
 {
     int opcion;
     printf(" \n Menu de opciones\n");
@@ -13,16 +13,16 @@ int menu(int num1,int num2,int bandera1,int bandera2)
     }
     else
     {
-        printf(" \n 1. Ingresar 1er operando (A=%d)",num1);
+        printf(" \n 1. Ingresar 1er operando (A=%.1f)",num1);
     }
 
     if(bandera2==0)
     {
-        printf(" \n 1. Ingresar 1er operando (A=y)");
+        printf(" \n 2. Ingresar 2do operando (A=y)");
     }
     else
     {
-        printf(" \n 1. Ingresar 1er operando (A=%d)",num2);
+        printf(" \n 2. Ingresar 2do operando (A=%.1f)",num2);
     }
 
     printf(" \n 3. Calcular todas las operaciones");
@@ -52,18 +52,18 @@ int menu(int num1,int num2,int bandera1,int bandera2)
     return opcion;
 }
 
-int operacionSuma(int num1,int num2)
+float operacionSuma(float num1,float num2)
 {
-    int resultado;
+    float resultado;
 
     resultado = num1+num2;
 
     return resultado;
 }
 
-int operacionResta(int num1,int num2)
+float operacionResta(float num1,float num2)
 {
-    int resultado;
+    float resultado;
 
     resultado = num1-num2;
 
@@ -86,9 +86,9 @@ float operacionDivision(float num1,float num2)
     return resultado;
 }
 
-int operacionMultiplicacion (int num1,int num2)
+float operacionMultiplicacion (float num1,float num2)
 {
-    int resultado;
+    float resultado;
 
     resultado = num1*num2;
 
@@ -134,3 +134,18 @@ long long int operacionFactorial2(int num2)
     return fact2;
 
 }
+
+int numero1Validado (float num1)
+{
+    int conversion = num1;
+
+    return conversion;
+}
+
+int numero2Validado (float num2)
+{
+    int conversion = num2;
+
+    return conversion;
+}
+

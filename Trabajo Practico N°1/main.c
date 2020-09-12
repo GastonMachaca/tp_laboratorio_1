@@ -21,13 +21,13 @@ int main()
 {
     // Declaracion de variables
 
-    int num1=0;
-    int num2=0;
+    float num1=0;
+    float num2=0;
     int opcion;
-    int Suma;
-    int Resta;
+    float Suma;
+    float Resta;
     float Division;
-    int Multiplicacion;
+    float Multiplicacion;
     int Factorial;
     int Factorial2;
     int validacionOperaciones1=0;
@@ -46,7 +46,7 @@ int main()
             case 1:
                 // OPERANDO A.
                 printf("Ingrese el 1er operando: ");
-                scanf("%d",&num1);
+                scanf("%f",&num1);
                 bandera1=1;
                 validacionOperaciones1=1;
                 break;
@@ -54,7 +54,7 @@ int main()
             case 2:
                 //OPERANDO B.
                 printf("Ingrese el 2do operando: ");
-                scanf("%d",&num2);
+                scanf("%f",&num2);
                 bandera2=1;
                 validacionOperaciones2=1;
                 break;
@@ -81,32 +81,33 @@ int main()
                 // MUESTRO LOS RESULTADOS.
                 if(validacionOperaciones1==1 && validacionOperaciones2==1)
                 {
-                    printf("\nEl resultado de la suma de A+B es: %d\n",Suma);
-                    printf("\nEl resultado de la resta de A-B es: %d\n",Resta);
+                    printf("\nEl resultado de la suma de A+B es: %.2f\n",Suma);
+                    printf("\nEl resultado de la resta de A-B es: %.2f\n",Resta);
                     if(num2==0)
                     {
                         printf("\nUsted realizo una division por cero.\nAl ser infinitas posibilidades se omitio esta cuenta...\nVuelva a intentarlo.\n");
                     }else
                     {
-                        printf("\nEl resultado de la division de A/B es: %.1f\n",Division);
+                        printf("\nEl resultado de la division de A/B es: %.2f\n",Division);
                     }
-                    printf("\nEl resultado de la multiplicacion de A*B es: %d\n",Multiplicacion);
-                    if(num1<0 && num2<0)
+                    printf("\nEl resultado de la multiplicacion de A*B es: %.2f\n",Multiplicacion);
+
+                    if(numero1Validado(num1)<0 && numero2Validado(num2)<0)
                     {
                         printf("\nEl resultado del factorial de A y el factorial de B no pueden ser calculados debido al ingreso de valores negativos. \nCambie los operando ingresados negativos para continuar.");
                     }
                     else
                     {
-                        if(num1==0 && num2==0)
+                        if(numero1Validado(num1)>=0 && numero2Validado(num2)>=0)
                         {
                             printf("\nEl resultado del factorial de A es %d y el factorial de B es %d \n",Factorial,Factorial2);
                         }
 
-                        if(num1<0)
+                        if(numero1Validado(num1)<0)
                         {
                             printf("\nEl resultado del factorial de A no existe(operador negativo)y el factorial de B es: %d\n",Factorial2);
                         }
-                        if(num2<0)
+                        if(numero2Validado(num2)<0)
                         {
                             printf("\nEl resultado del factorial de A es: %d y el factorial de B no existe(operador negativo)\n",Factorial);
                         }
