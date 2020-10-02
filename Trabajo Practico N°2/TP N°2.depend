@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1601672880 source:g:\proyectos codeblocks\tp n°2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"Menu.h"
+
+1601680809 g:\proyectos codeblocks\tp n°2\arrayemployees.h
+
+1601681107 source:g:\proyectos codeblocks\tp n°2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"Menu.h"
+
+1601678913 source:g:\proyectos codeblocks\tp n°2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"Menu.h"
+
+1601680587 g:\proyectos codeblocks\tp n°2\menu.h
+
