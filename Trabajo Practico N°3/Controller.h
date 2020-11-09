@@ -7,7 +7,5 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee);
 int controller_sortEmployee(LinkedList* pArrayListEmployee);
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee);
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
-int utn_getCadena(char *pAux, int len, int intentos, char* mensaje, char* mensajeError);
-int getCadena(char* pAux, int len);
 
 

@@ -192,15 +192,17 @@
 	<ctype.h>
 	"Menu.h"
 
-1604716339 source:c:\users\home pc\desktop\tp3\employee.c
+1604886434 source:c:\users\home pc\desktop\tp3\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<ctype.h>
 	"Employee.h"
 
-1604712179 c:\users\home pc\desktop\tp3\employee.h
+1604886405 c:\users\home pc\desktop\tp3\employee.h
+	"LinkedList.h"
 
-1604712295 source:c:\users\home pc\desktop\tp3\main.c
+1604887113 source:c:\users\home pc\desktop\tp3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -208,22 +210,44 @@
 	"Employee.h"
 	"Menu.h"
 
-1533133022 c:\users\home pc\desktop\tp3\linkedlist.h
+1604869854 c:\users\home pc\desktop\tp3\linkedlist.h
 
-1604716069 c:\users\home pc\desktop\tp3\controller.h
+1604784542 c:\users\home pc\desktop\tp3\controller.h
 
-1604526759 c:\users\home pc\desktop\tp3\menu.h
+1604887278 c:\users\home pc\desktop\tp3\menu.h
+	"Employee.h"
 
-1604527015 source:c:\users\home pc\desktop\tp3\menu.c
+1604887197 source:c:\users\home pc\desktop\tp3\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"Menu.h"
+	"Extras.h"
 
-1604711104 source:c:\users\home pc\desktop\tp3\parser.c
+1604867924 source:c:\users\home pc\desktop\tp3\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
+
+1604887244 source:c:\users\home pc\desktop\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Extras.h"
+	"parser.h"
+	"Menu.h"
+
+1604876637 c:\users\home pc\desktop\tp3\extras.h
+
+1604876769 source:c:\users\home pc\desktop\tp3\extras.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Extras.h"
+
+1533133022 c:\users\home pc\desktop\tp3\parser.h
 

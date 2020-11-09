@@ -63,6 +63,26 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
+    int error = -1;
+    int r = 0;
 
-    return 1;
+    Employee* auxEmp;
+
+    if(pFile != NULL && pArrayListEmployee != NULL)
+    {
+        do
+        {
+            auxEmp=employee_new();
+
+            r = fread(auxEmp, sizeof(Employee), 1, pFile);
+
+            if(r == 1)
+            {
+                ll_add(pArrayListEmployee, auxEmp);
+                error=0;
+            }
+
+        }while(!feof(pFile));
+    }
+    return error;
 }
