@@ -9,13 +9,6 @@
 
 #define TAM 128
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -37,18 +30,12 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
     else
     {
         printf("No se pudo abrir el archivo\n");
+        error = 0;
     }
 
     return error;
 }
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -64,14 +51,14 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
             if(!parser_EmployeeFromBinary(pFile,pArrayListEmployee))
             {
                 printf("Cargado con exito.\n");
-                error = 0;
+                error = 1;
             }
         }
     }
     else
     {
         printf("No se pudo abrir el archivo\n");
-        exit(EXIT_FAILURE);
+        error=0;
     }
 
     fclose(pFile);
@@ -79,13 +66,6 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
     return error;
 }
 
-/** \brief Alta de empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -138,13 +118,6 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     return error;
 }
 
-/** \brief Modificar datos de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -183,18 +156,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     else
     {
         printf("\nNo se puede acceder a la modificacion!.");
+        error = 0;
     }
 
     return error;
 }
 
-/** \brief Baja de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -222,21 +189,13 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     else
     {
         printf("No hay empleados cargados\n\n");
+        error = 0;
     }
 
     return error;
 
 }
 
-
-
-/** \brief Listar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -247,7 +206,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee != NULL && ll_isEmpty(pArrayListEmployee)== 0)
     {
-        error = 1;
+
         system("cls");
         printf("                         ***LISTA DE EMPLEADOS***                            \n\n");
 
@@ -261,7 +220,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
             if( auxEmp != NULL)
             {
                 viewEmployee( auxEmp );
-                error=0;
+                error=1;
                 auxEmp = NULL;
             }
         }
@@ -269,18 +228,12 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     else
     {
         printf("\n No hay empleados cargados\n\n");
+        error = 0;
     }
 
     return error;
 }
 
-/** \brief Ordenar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
     int error= -1;
@@ -302,13 +255,6 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     return error;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -342,7 +288,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
                     if(!employee_getId(auxEmp,&auxId) && !employee_getHorasTrabajadas(auxEmp,&auxHoras) && !employee_getSueldo(auxEmp,&auxSueldo) && !employee_getNombre(auxEmp,nombre))
                     {
                         fprintf(pFile,"%d,%s,%d,%d\n",auxId,nombre,auxHoras,auxSueldo);
-                        error=0;
+                        error=1;
                     }
 
                 }
@@ -350,16 +296,14 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
             fclose(pFile);
         }
     }
+    else
+    {
+        printf("Ocurrio un inconveniente.");
+        error = 0;
+    }
     return error;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
     int error = -1;
@@ -381,13 +325,18 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
                 if(auxEmp != NULL)
                 {
                     fwrite(auxEmp,sizeof(Employee),1,pFile);
-                    error =0;
+                    error =1;
                 }
 
             }
 
             fclose(pFile);
         }
+    }
+    else
+    {
+        printf("Ocurrio un inconveniente.");
+        error = 0;
     }
     return error;
 }

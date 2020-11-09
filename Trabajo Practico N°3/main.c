@@ -19,6 +19,8 @@
     10. Salir
 *****************************************************/
 
+// Tengo inconvenientes tecnicos por parte de la empresa telefonica, me lo solucionaran a la brevedad,hice varios commit por si se me van los datos moviles.
+// Que tenga un buen dia.
 
 int main()
 {
